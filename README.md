@@ -1,14 +1,55 @@
 # [Midterm Lab Task 3-1 - Using MYSQL Clause](https://github.com/user-attachments/files/19890889/Finals.Lab.Task.3.1.-.Ordona.docx)
 
-## Instructions:
-1. Create a database named online_courseDB
-2. Use the online_courseDB
-3. Copy and paste the initial query then perform the SELECT statements required for each problems in the figure below: (download onlineCourse.sql file)
+## Step by Step Process
+- **Step 1: Create the Database**
+  - Open your MySQL environment (like MySQL Workbench or phpMyAdmin).
+  - Create a new database by typing the command:
+    - `CREATE DATABASE online_courseDB;`
+  - This command sets up the main storage space for your online course data.
 
-## Required Outputs to be posted in your Github portfolio
-1. Query statements (Task 1-5)
-2. Output of each query (Task 1-5)
-3. SQL copy of the database and table structures
+- **Step 2: Select the Database**
+  - Choose or switch to the newly created database to start working in it:
+    - `USE online_courseDB;`
+  - This ensures all tables and queries will be applied to the correct database.
+
+- **Step 3: Load Initial Data**
+  - Download the `onlineCourse.l` file provided in the instructions.
+  - Run or import this file into the MySQL environment.
+    - It will automatically:
+      - Create a table called `courses`.
+      - Add 20 course records into the table.
+  - Make sure the table has the following fields:
+    - `id`: auto-incremented primary key.
+    - `course_name`: VARCHAR, not null.
+    - `category`: VARCHAR, not null.
+    - `enrollment_limit`: INTEGER, not null.
+    - `students_enrolled`: INTEGER, not null.
+
+- **Step 4: Perform SQL Tasks in Order**
+
+  - **Task 1: List Courses Below Capacity**
+    - Find and display all courses where the number of enrolled students is less than the enrollment limit.
+    - SQL Concept: `SELECT` with `WHERE` condition.
+
+  - **Task 2: Group by Category**
+    - Group the courses by their category and show the total number of enrolled students per category.
+    - SQL Concepts: `GROUP BY` and `SUM()` function.
+
+  - **Task 3: Show Fully Enrolled Courses**
+    - Display courses where the number of students enrolled equals the enrollment limit.
+    - SQL Concept: Equality condition in `WHERE`.
+
+  - **Task 4: Total Students in All Courses**
+    - Calculate and display the total number of students enrolled across all 20 courses.
+    - SQL Concept: Aggregation using `SUM()`.
+
+  - **Task 5: Sort Courses by Enrollment**
+    - Display all courses ordered by the number of students enrolled, from lowest to highest.
+    - SQL Concept: `ORDER BY` with ascending sort.
+
+- **Final Step: Review Results**
+  - Check that each query produces the expected output.
+  - Verify correct field names and data consistency.
 
 # Screenshots
 ## Query Statements
