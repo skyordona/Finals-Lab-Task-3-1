@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finals Lab Task 3-1</title>
+    <style>
+        /* Street Fighter Theme */
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Press Start 2P', cursive;
+            margin: 0;
+            padding: 20px;
+            background-image: url('https://cdn.steamstatic.com/steamcommunity/public/images/items/1364780/d8a11446810c7ebce3ca74c5e7e2a2ce689f2f8c.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeOut 2s forwards;
+            animation-delay: 3s;
+        }
+
+        .loading-text {
+            color: #ff0;
+            font-size: 24px;
+            animation: blink 0.5s infinite;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 5s;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .download-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        h1, h2 {
+            color: #ff0;
+            text-shadow: 3px 3px #f00;
+            text-transform: uppercase;
+            text-align: center;
+            border-bottom: 2px solid #ff0;
+            padding-bottom: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            border: 3px solid #ff0;
+            margin: 10px 0;
+            box-shadow: 0 0 10px #f00;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #ff0;
+            color: #000;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .download-btn:hover {
+            background: #f00;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        ol, ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #ff0;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 0, 0, 0.3);
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; visibility: hidden; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    </style>
+</head>
+<body>
+    <div class="loading-screen">
+        <div class="loading-text">LOADING...</div>
+    </div>
+
+    <div class="container">
+        <h1>Finals Lab Task 3-1</h1>
+        <h2>Using MySQL Clause</h2>
+
+        <div class="download-container">
+            <a href="https://github.com/user-attachments/files/19890889/Finals.Lab.Task.3.1.-.Ordona.docx" class="download-btn">Download Full Documentation</a>
+        </div>
+
+        <h2>Step by Step Process</h2>
+        <ol>
+            <li>Create the Database
+                <ul>
+                    <li>Open your MySQL environment (like MySQL Workbench or phpMyAdmin)</li>
+                    <li>Create a new database by typing the command:
+                        <ul>
+                            <li><code>CREATE DATABASE online_courseDB;</code></li>
+                        </ul>
+                    </li>
+                    <li>This command sets up the main storage space for your online course data</li>
+                </ul>
+            </li>
+            <li>Select the Database
+                <ul>
+                    <li>Choose or switch to the newly created database:
+                        <ul>
+                            <li><code>USE online_courseDB;</code></li>
+                        </ul>
+                    </li>
+                    <li>This ensures all tables and queries will be applied to the correct database</li>
+                </ul>
+            </li>
+            <li>Load Initial Data
+                <ul>
+                    <li>Download the <code>onlineCourse.l</code> file provided in the instructions</li>
+                    <li>Run or import this file into the MySQL environment</li>
+                    <li>Table fields include:
+                        <ul>
+                            <li><code>id</code>: auto-incremented primary key</li>
+                            <li><code>course_name</code>: VARCHAR, not null</li>
+                            <li><code>category</code>: VARCHAR, not null</li>
+                            <li><code>enrollment_limit</code>: INTEGER, not null</li>
+                            <li><code>students_enrolled</code>: INTEGER, not null</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Perform SQL Tasks in Order
+                <ul>
+                    <li>Task 1: List Courses Below Capacity</li>
+                    <li>Task 2: Group by Category</li>
+                    <li>Task 3: Show Fully Enrolled Courses</li>
+                    <li>Task 4: Total Students in All Courses</li>
+                    <li>Task 5: Sort Courses by Enrollment</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Screenshots</h2>
+        <h3>Query Statements</h3>
+        <h4>1. Task 1</h4>
+        <img src="https://github.com/user-attachments/assets/30cda5c9-9b7d-4b14-8a30-41fd9d4f1109" alt="Task 1 Query">
+        <h4>2. Task 2</h4>
+        <img src="https://github.com/user-attachments/assets/8d6d5f53-e915-4f09-815f-7b9d9153abe2" alt="Task 2 Query">
+        <h4>3. Task 3</h4>
+        <img src="https://github.com/user-attachments/assets/1a5505f4-b815-4278-ba31-cfec3a3fd936" alt="Task 3 Query">
+        <h4>4. Task 4</h4>
+        <img src="https://github.com/user-attachments/assets/9545a9fa-906b-478f-8b13-ceb4fd2b3320" alt="Task 4 Query">
+        <h4>5. Task 5</h4>
+        <img src="https://github.com/user-attachments/assets/7acadcaa-55e7-4134-ba4d-7429dfa171e6" alt="Task 5 Query">
+
+        <h3>Table Structure</h3>
+        <h4>1. Task 1</h4>
+        <img src="https://github.com/user-attachments/assets/e18f681b-716b-46d7-a615-9b7b2c9b91b6" alt="Task 1 Structure">
+        <h4>2. Task 2</h4>
+        <img src="https://github.com/user-attachments/assets/547d0798-18f3-4746-a49d-8b0ec98dce41" alt="Task 2 Structure">
+        <h4>3. Task 3</h4>
+        <img src="https://github.com/user-attachments/assets/49d9f67d-16e7-49d3-a0fe-3abcef8b4332" alt="Task 3 Structure">
+        <h4>4. Task 4</h4>
+        <img src="https://github.com/user-attachments/assets/f8fb9c00-8b15-483b-bd9d-93f87fd3b3eb" alt="Task 4 Structure">
+        <h4>5. Task 5</h4>
+        <img src="https://github.com/user-attachments/assets/6b3bed9e-d1e3-4cbb-895d-ffc23a26c121" alt="Task 5 Structure">
+    </div>
+</body>
+</html>
